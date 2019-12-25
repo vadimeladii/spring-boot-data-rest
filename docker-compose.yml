@@ -1,0 +1,17 @@
+version: '2'
+services:
+#   POSTGRES
+  db:
+    image: postgres:latest
+    container_name: spring_boot_data_rest_postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - springbootdatarest
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+networks:
+  springbootdatarest:
+    driver: bridge
