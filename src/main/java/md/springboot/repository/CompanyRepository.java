@@ -1,9 +1,11 @@
 package md.springboot.repository;
 
+import io.swagger.annotations.Api;
 import md.springboot.entity.CompanyEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface CompanyRepository extends JpaRepository<CompanyEntity, Long> {
+@Api(tags = "Company Entity")
+@RepositoryRestResource(path = "companies")
+public interface CompanyRepository extends PagingAndSortingRepository<CompanyEntity, Long> {
 }
